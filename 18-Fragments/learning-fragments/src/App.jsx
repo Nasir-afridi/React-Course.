@@ -1,20 +1,46 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  let foodItems = [];
+  /* let foodItems = [
+    "Green Vegetables",
+    "Garlic",
+    "Ginger",
+    "Eggs",
+    "Pumpkin seeds",
+    "Ghee",
+  ];*/
+
+  /*ternary operator
+  let emptyMessage = [
+    foodItems.length === 0 ? (
+      <h3>
+        I am still hungry please Mom come back to home to feed us a tasty and
+        spicy foods.
+      </h3>
+    ) : null,
+  ];*/
+
+  // Logical operators.
   return (
-    <div>
-      <div>Healthy Foods</div>
-      <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+    <>
+      <h1>Healthy Foods</h1>
+      {foodItems.length === 0 && (
+        <h3>
+          I am still hungry please Mom come back to home to feed us a tasty and
+          spicy foods.
+        </h3>
+      )}
+
+      <ul className="list-group">
+        {foodItems.map((items) => (
+          <li key={items} class="list-group-item">
+            {items}
+          </li>
+        ))}
       </ul>
-    </div>
+    </>
   );
 }
 
